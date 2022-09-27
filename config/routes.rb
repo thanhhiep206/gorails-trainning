@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
  #user
  get "signup", to: "register#new" 
- get "login" , to: "login#new"
- post "login" , to: "login#create"
+ get "signin" , to: "session#new"
+ post "signin" , to: "session#create"
+ delete "logout", to: "session#destroy"
  post "signup", to: "register#create"
  delete "delete", to: "user#delete"
  patch "update", to: "user#update"

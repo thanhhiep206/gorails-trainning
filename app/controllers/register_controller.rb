@@ -20,7 +20,7 @@ end
 
 if @user.errors.to_hash.empty?() ==true
     message = "Signup success"
-    
+    session[:user_id] = @user.id
    return redirect_to root_path , alert:message
   end
     end

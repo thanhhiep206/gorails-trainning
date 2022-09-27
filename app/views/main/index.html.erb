@@ -1,1 +1,8 @@
-<button  type="button" class="btn btn-primary">hello ruby</button>
+
+
+<%if Current.user%>
+<button  type="button" class="btn btn-primary">Hello <%=Current.user %></button>
+<h1> Welcome to <%=@user.email%></h1>
+<%else%>
+<h1> Welcome to BLog app</h1>
+<%end%>
