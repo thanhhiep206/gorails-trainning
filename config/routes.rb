@@ -12,6 +12,8 @@ Rails.application.routes.draw do
  post "signin" , to: "session#create"
  delete "logout", to: "session#destroy"
  post "signup", to: "register#create"
- delete "delete", to: "user#delete"
- patch "update", to: "user#update"
+
+ #password
+ get "password", to: "password#edit" , as: :edit_password
+ patch "password", to: "password#update"
 end

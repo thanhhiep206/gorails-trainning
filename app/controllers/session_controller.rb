@@ -41,7 +41,7 @@ puts user
  if user.present? && user.authenticate(params[:password])
     message ="Login successfully"
     session[:user_id] = user.id
-  return redirect_to root_path , notice: message
+  return redirect_to root_path , alert: message
  else
     flash[:notice] ="invalid email or password"
     return redirect_to signin_path

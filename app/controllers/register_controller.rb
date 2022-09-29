@@ -12,13 +12,13 @@ if @user
     return false
 end
 @user =User.create(user_params)
-if @user.errors.to_hash.empty?() ==false
+if @user.errors.to_hash.empty? ==false
    
     message =  @user.errors.to_hash[:email] ?  @user.errors.to_hash[:email].join("") : @user.errors.to_hash[:password].join("")
     redirect_to signup_path, notice:message
 end
 
-if @user.errors.to_hash.empty?() ==true
+if @user.errors.to_hash.empty? ==true
     message = "Signup success"
     session[:user_id] = @user.id
    return redirect_to root_path , alert:message
@@ -36,11 +36,6 @@ end
 #      redirect_to "/users/#{@user.id}/edit"
 #   end
 # end
-def delete
-    session[:user_id] = nil
-    @user = User.find(params[:id])
-    @user.destroy
-end
 
 
 private
